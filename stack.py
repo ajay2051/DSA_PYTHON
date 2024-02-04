@@ -1,3 +1,7 @@
+# A stack in Python is a linear data structure that follows the Last In First Out (LIFO) principle.
+# Stack can be used to maintain history by browser.
+# Undo (Ctrl + Z) functionality in any editor uses stack to track down last set of operations.
+
 from collections import deque
 
 stack = deque()
