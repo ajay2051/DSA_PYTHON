@@ -34,8 +34,8 @@ class HashTable:
     def __setitem__(self, key, value):
         h = self.get_hash(key)  # h returns index of key
         found = False
-        for index, elemnt in enumerate(self.arr[h]):
-            if len(elemnt) == 2 and elemnt[0] == key:
+        for index, element in enumerate(self.arr[h]):
+            if len(element) == 2 and element[0] == key:
                 self.arr[h][index] = (key, value)
                 found = True
         if not found:
