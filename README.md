@@ -11,7 +11,7 @@ Big O Notation is used to measure how running time or space requirements for you
 input size grows.
 
 time = a*n + b where b is constant
-(1) Keep fastest growing terms
+(1) Keep the fastest growing terms
     time = a * n
 (2) Drop Constants
     time = O(n)
@@ -24,3 +24,8 @@ Measuring running time growth: time complexity
 Measuring space growth: space complexity
 
 Binary Search Iteration k = n/2^k 
+
+
+# Advantages of linked list over arrays
+
+https://www.prepbytes.com/blog/linked-list/advantage-and-disadvantage-of-linked-list-over-array/

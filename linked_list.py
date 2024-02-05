@@ -10,16 +10,17 @@ class LinkedList:
 
     def insert_at_beginning(self, data):
         """this function is used to insert data at beginning in linked list"""
-        self.head = Node(data, self.head)  # In Node we are inserting data and next element will be head
+        node = Node(data, self.head)  # In Node we are inserting data and next element will be head
+        self.head = node
 
     def insert_at_end(self, data):
         """This function is used to insert data at end"""
-        if self.head is None:
+        if self.head is None:  # It means linked list is empty
             self.head = Node(data, None)
             return
 
         itr = self.head
-        while itr.next:
+        while itr.next:  # gets the last element in Node
             itr = itr.next
         itr.next = Node(data, None)
 
@@ -74,11 +75,14 @@ class LinkedList:
             return
 
         itr = self.head
-        llstr = ""
+        linked_list_string = ""
         while itr:
-            llstr += str(itr.data) + "----->"  # Append data in llstr
+            suffix = ""
+            if itr.next:
+                suffix = "----->"
+            linked_list_string += str(itr.data) + suffix  # Append data in linked_list_string
             itr = itr.next
-        print(llstr)
+        print(linked_list_string)
 
 
 if __name__ == "__main__":
@@ -86,6 +90,7 @@ if __name__ == "__main__":
     linked_list = LinkedList()
     linked_list.insert_at_beginning(5)
     linked_list.insert_at_beginning(10)
+    linked_list.insert_at_beginning(15)
     linked_list.insert_at_end(25)
     linked_list.insert_at_end(30)
     linked_list.insert_values(["12", "45", "78"])
