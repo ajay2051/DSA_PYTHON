@@ -1,3 +1,5 @@
+# Dictionaries in Python uses hash table
+
 stock_prices = []
 with open("stock_prices.csv", "r") as f:
     for line in f:
@@ -34,8 +36,8 @@ class HashTable:
     def __setitem__(self, key, value):
         h = self.get_hash(key)  # h returns index of key
         found = False
-        for index, element in enumerate(self.arr[h]):
-            if len(element) == 2 and element[0] == key:
+        for index, hash_element in enumerate(self.arr[h]):
+            if len(hash_element) == 2 and hash_element[0] == key:
                 self.arr[h][index] = (key, value)
                 found = True
         if not found:
