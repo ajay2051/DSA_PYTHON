@@ -1,26 +1,28 @@
+# Folder Structure in OS in one of the example of tree.
+
 class TreeNode:
     def __init__(self, data):
         self.data = data
         self.children = []
         self.parent = None
 
-    # def get_level(self):
-    #     level = 0
-    #     p = self.parent
-    #     while p:
-    #         level += 1
-    #         p = p.parent
-    #     return level
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
+        return level
 
     def print_tree(self):
-        # spaces = " " * self.get_level() * 3
-        prefix = "spaces " + "|---" if self.parent else ""
+        spaces = " " * self.get_level() * 3
+        prefix = spaces + "|---" if self.parent else ""
         print(prefix + self.data)
         for child in self.children:
             child.print_tree()
 
     def add_child(self, child):
-        self.parent = self
+        child.parent = self
         self.children.append(child)
 
 
@@ -47,6 +49,7 @@ def build_product_tree():
     root.add_child(tv)
 
     root.get_level()
+    root.print_tree()
 
 
 if __name__ == "__main__":
